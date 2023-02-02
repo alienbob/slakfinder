@@ -20,7 +20,7 @@ class repository {
     return $repo['id'];
   }
 
-  public function update(){	# DA SISTEMARE
+  public function update(){	# TO BE FIXED
     $this->pkgsfile=new internet(((((substr($this->packages,0,7))=="http://")or((substr($this->packages,0,6))=="ftp://"))?"":$this->url).$this->packages);
     $this->hash=$hashfile->download();
     if(!$this->pkgsfile->exists())return false;
@@ -45,13 +45,12 @@ class repository {
     if ( isset($repo['deps']) )if($repo['deps']==1)$p2=$top*2/100;
     if ( $nf )$p3=$top*4/100;
     switch ($repo['version']){
-      case '13.37': $p4=$top*20/100;break;
-      case '13.1': $p4=$top*15/100;break;
+      case '15.0': $p4=$top*20/100;break;
       case 'current': $p4=$top*17/100;break;
-      case '13.0': $p4=$top*10/100;break;
-      case 'mixed': $p4=$top*12/100;break;
-      case '12.2': $p4=$top*4/100;break;
-      case '12.1': $p4=$top*0/100;break;
+      case 'mixed': $p4=$top*15/100;break;
+      case '14.2': $p4=$top*12/100;break;
+      case '14.1': $p4=$top*10/100;break;
+      case '14.0': $p4=$top*0/100;break;
     }
     $repo['rank']=round($top-($p1+$p2+$p3+$p4));
     $out=$this->db->update("#__repository",$repo,array("id" => "{$repo['id']}"));
@@ -142,7 +141,7 @@ class repository {
 	rank INT DEFAULT '99',
 	manifest VARCHAR( 30 ) ,
 	packages VARCHAR( 30 ) ,
-	version VARCHAR( 10 ) ,
+	version VARCHAR( 16 ) ,
 	arch VARCHAR( 10 ) ,
 	class VARCHAR( 10 ) ,
 	mtime VARCHAR( 40 ),
