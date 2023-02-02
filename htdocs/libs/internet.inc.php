@@ -33,12 +33,13 @@ class internet {
 
   public function gethead(){
     $this->getheadfopen();
+    //$this->getheadcurl();
   }
 
   public function getheadfopen(){
     $head=array();$code=200;
     echo '{gethead '.$this->url.'}';
-    $page=file_get_contents( $this->url,false,null, -1,100);
+    $page=file_get_contents( $this->url,false,null,0 );
     $head=$http_response_header;
     $this->http_response_header=$head;
     if(is_array($head)){
@@ -69,7 +70,7 @@ class internet {
     $head=array();$code=0;
     exec("curl -I {$this->url} 2>/dev/null",$head,$code);
     foreach($head as $val){
-      $tmp=preg_split('/^([^ :]*):? ([^]*)?$/',$val,0,PREG_SPLIT_DELIM_CAPTURE);
+      $tmp=preg_split('/^([^ :]*):? (.*)?$/',$val,0,PREG_SPLIT_DELIM_CAPTURE);
       if(isset($tmp[2])) $this->head[$tmp[1]]=$tmp[2];
     }
     if(!isset($this->head['Last-Modified']))$this->head['Last-Modified']="Date Unknown (filesize: ".$this->head['Content-Length'].")";
