@@ -32,9 +32,9 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
 
 <h2>Guest Book</h2>
 <pre><font color=green>
-Thanks all for use SlakFinder. I hope it was useful to all.
+Thanks for using SlakFinder. I hope it is useful to you.
 Now, if you want, you can write a comment. 
-Just for feedback, suggests, bug report, repository report, greetings to the world, ..., or just a signature.
+Just for feedback, suggestions, bug reports, repository recommendations, greetings to the world, ..., or just a signature.
 </font>
 <form action="gb.php" method="post">Nick:
 <?php
@@ -43,7 +43,7 @@ Just for feedback, suggests, bug report, repository report, greetings to the wor
   if(isset($_SESSION['slakhomelinuxguestbooknick']))echo "value='{$_SESSION['slakhomelinuxguestbooknick']}'";
   echo ">";
 ?><br>message:
-<textarea name=message cols=70 rows=3></textarea>
+<textarea name=message cols=70 rows=3 maxlength="256"></textarea>
 <input type=submit><br></form>
 <a href='gb.php'>Reload</a> <?php
   if(isset($_POST['message'])){

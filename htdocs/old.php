@@ -32,7 +32,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
     $db->counter_inc('visits');
     $_SESSION['searcher_visitor']=$db->counter_get('visits');
   }
-  #echo "You are the ".$_SESSION['searcher_visitor']."st visitor<br />";
+  #echo "You are visitor number ".$_SESSION['searcher_visitor']."<br />";
   $name=$desc=$file=$repo=$order=null;
   foreach($_GET as $key => $value)$$key=$value;
   if ($name or $desc or $file) {
@@ -45,7 +45,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
   $hrepos="";
   if ($name or $desc or $file){
     $hrepos.="<div style='color:red' id='wait1'>Wait a moment...";
-    if($file)$hrepos.=" (up 2 minutes)";
+    if($file)$hrepos.=" (up to 2 minutes)";
     $hrepos.="</div>";
   }
   $hrepos.="
@@ -59,7 +59,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
   $hrepos.=writerepos($repo); 
   if ($name or $desc or $file){
     $hrepos.="<div style='color:red' id='wait2'>Wait a moment...";
-    if($file)$hrepos.=" (up 2 minutes)";
+    if($file)$hrepos.=" (up to 2 minutes)";
     $hrepos.="</div>";
   }
   $hrepos.="

@@ -38,7 +38,7 @@ if (!isset($_SESSION['searcher_visitor'])) {
   $_SESSION['searcher_visitor'] = $db->counter_get('visits');
 }
 
-#echo "You are the {$_SESSION['searcher_visitor']}st visitor<br />";
+#echo "You are visitor number {$_SESSION['searcher_visitor']}<br />";
 $newsearch = $name = $desc = $file = $repo = $order = null;
 
 foreach($_GET as $key => $value) $$key = $value;
@@ -51,12 +51,12 @@ if ($name or $desc or $file) {
   }
 }
 
-#echo "Searched ".$db->counter_get('searches')." packages from 6 March 2010<br /><br />";
+#echo "Searched ".$db->counter_get('searches')." packages since 08 January 2023<br /><br />";
 $hrepos = '';
 
 if ($name or $desc or $file) {
   $hrepos .= "<div style='color:red' id='wait1'>Wait a moment...";
-  if ($file) $hrepos .= " (up 2 minutes)";
+  if ($file) $hrepos .= " (up to 2 minutes)";
   $hrepos .= "</div>";
 }
 
@@ -75,13 +75,13 @@ $form = "
 <tr><td>Filename:</td><td><input name='file' value='$file' /></td></tr>
 </table>
 <input type='submit' value='go' /><br>
-<sup><i>(*) NEW!!!! Enter one or more words <u>space separated</u>. Do not enter package version (it will be ignored)</i></sup>
+<sup><i>* Enter one or more words <u>space separated</u>. Do not enter package version (it will be ignored)</i></sup>
 ";
 $hrepos .= writereposcompact($repo, $form); 
 
 if ($name or $desc or $file) {
   $hrepos.="<div style='color:red' id='wait2'>Wait a moment...";
-  if ($file) $hrepos .= " (up 2 minutes)";
+  if ($file) $hrepos .= " (up to 2 minutes)";
   $hrepos .= "</div>";
 }
 
@@ -274,9 +274,9 @@ if($to < $nres){
   $from=$maxresult*$pg;
   echo "<a href='index.php?start=$from&maxresult=$maxresult&repo=$repo&name=$name&desc=$desc&file=$file&order=$order#results'>&gt;&gt;</a>  ";
 }
+ }
 	echo "</pre>";
 	echo "<br /><br /><br />";
- }
 ?>
 <script>
   var wait=document.getElementById('wait1');
@@ -295,7 +295,7 @@ if (!($name or $desc or $file)) {
  echo "<td width='50%'>";
 
  $gb = new guestbook();
- echo "<a href='gb.php'>Guest Book</a>: you can <a href='gb.php'>post comments</a>, suggests, bug/repository reports, or just your signature.<br><br>";
+ echo "<a href='gb.php'>Guest Book</a>: you can <a href='gb.php'>post comments</a>, suggestions, bug reports, repository recommendations, or just your signature.<br><br>";
  $mm=5;
  echo tables(array("","",""),1," class='gb' ");
  echo tables(array("Date","Nick","Message"),1," class='gb' ");

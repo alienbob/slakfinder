@@ -31,13 +31,13 @@ function redefrepo($reposelected = 0) {
   echo "<table border='0' width='100%'>" . 
        "<tr>" . 
        "<td>" . 
-       "You are the {$_SESSION['searcher_visitor']}st visitor<br />" . 
-       "Searched ".$GLOBALS['db']->counter_get('searches')." packages from 24 Apr 2012<br /><br />" . 
+       "You are visitor number {$_SESSION['searcher_visitor']}<br />" . 
+       "Searched ".$GLOBALS['db']->counter_get('searches')." packages since 08 Jan 2023<br /><br />" . 
        "<code>{$nrepos} repositories ({$npackages} packages)</code><br/><br/>\n" . 
        "</td>" . 
        "<td>" . 
        "<table border=1 cellspacing=0>" . 
-       "<tr><td colspan='3' align='center'><code><b><a href='stats.php'>Recents</a></b></code></td></tr>" . 
+       "<tr><td colspan='3' align='center'><code><b><a href='stats.php'>Recent searches</a></b></code></td></tr>" . 
        "<tr><td><code>",$names[0]."<br />".$names[1]."<br />".$names[2]."<br />".$names[3]."<br />".$names[4]."</code></td>" . 
        "<td><code>",$names[5]."<br />".$names[6]."<br />".$names[7]."<br />".$names[8]."<br />".$names[9]."</code></td>" . 
        "<td><code>",$names[10]."<br />".$names[11]."<br />".$names[12]."<br />".$names[13]."<br />".$names[14]."</code></td></tr>" . 

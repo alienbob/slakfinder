@@ -6,12 +6,12 @@ $stats=new stats();
 
 if(isset($_GET['gdaily'])){
 
- # gdaily -> fa il grafico
- # time -> numero massimo di giorni (default = 365)
- # y -> altezza del grafico (default = 1px per ricerca)
- # x -> largezza del grafico (default = 6px per giorno)
- # scale -> disegna linee orizzontali ogni tot (default = max/5)
- # mid -> media calcolata sugli ultimi tot giorni (default = no medie, 0 = time
+ # gdaily -> creates the graph
+ # time -> maximum number of days (default = 365)
+ # y -> height of the graph (default = 1px per search)
+ # x -> graph width (default = 6px per day)
+ # scale -> draw horizontal lines every few (default = max/5)
+ # mid -> average calculated over the last few days (default = no medium 0 = time)
 
  define('DAY',86400);
  $time=(isset($_GET['time']))?$_GET['time']:365;
@@ -109,7 +109,7 @@ echo "    <td colspan=2>\n";
   $today=$stats->countbyday(1); $today=$today[0];
   $all=$stats->countall();
   $days=$stats->numdays();
-  echo "      Searches from begin: $all | Today: $today | Top: ".($stats->maxbyday())." | Average: ".(round($all/$days)). " | $days days<br>\n";
+  echo "      All-time Searches: $all | Today: $today | Top: ".($stats->maxbyday())." | Average: ".(round($all/$days)). " | $days days<br>\n";
   echo "      <img src='stats.php?gdaily&y=200&mid=30&time=120'>\n";
 echo "    </td>\n";
 	echo "  </tr>\n";

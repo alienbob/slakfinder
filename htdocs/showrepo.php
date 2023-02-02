@@ -39,8 +39,8 @@
       echo tables(array("Class",$repo->class));
       echo tables(array("Last update",$repo->mtime));
       echo tables(array("Name",$repo->name));
-      echo tables(array("N. packages",$repo->npkgs));
-      echo tables(array("N. files",$repo->nfiles));
+      echo tables(array("Nr. of packages",$repo->npkgs));
+      echo tables(array("Nr. of files",$repo->nfiles));
       echo tables(array("Dependencies",(($repo->deps)?"supported":"unsupported")));
       echo tables(array("Description",$repo->description."<br>"));
       echo tables(array("Brief Descr.",$repo->brief));
