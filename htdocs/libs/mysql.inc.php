@@ -10,11 +10,11 @@ class mysql {
 
 	public function __construct() {
 		global $dbhost,$dbuser,$dbpass,$dbdata;
-		$this->db=mysql_connect($dbhost,$dbuser,$dbpass);
+		$this->db=mysqli_connect($dbhost,$dbuser,$dbpass);
 
 		if(!$this->db) return;
 		$this->connected=true;
-		if(!mysql_select_db($dbdata))return;
+		if(!mysqli_select_db($this->db, $dbdata))return;
 		$this->started=true;
 	}
 
@@ -28,21 +28,21 @@ class mysql {
 		$sql=str_replace('#__',$dbpref,$sql);
 		$start_time=microtime(true);
 		$this->msec=0;
-		$this->results=mysql_query($sql);
+		$this->results=mysqli_query($this->db, $sql);
 		$this->msec=(microtime(true)-$start_time)*1000;
 
 		$this->lastquery=$sql;
 		if(!$this->results){
-			$this->errno=mysql_errno();
-			$this->error=mysql_error();
+			$this->errno=mysqli_errno($this->db);
+			$this->error=mysqli_error($this->db);
 			if(isset($_SERVER['SHOWQ'])or isset($_GET['debug']))var_dump($this);
 			return false;
 		}
 		if($this->results==true){
-			$this->nrows=mysql_affected_rows();
-			$this->newid=mysql_insert_id();
+			$this->nrows=mysqli_affected_rows($this->db);
+			$this->newid=mysqli_insert_id($this->db);
 		}else{
-			$this->nrows=mysql_num_rows($this->results);
+			$this->nrows=mysqli_num_rows($this->results);
 			$this->datas=array();
 		}
 		if(isset($_SERVER['SHOWQ'])or isset($_GET['debug']))var_dump($this);
@@ -81,11 +81,11 @@ class mysql {
 	}
 
 	public function seek($seek){
-	  return mysql_data_seek($this->results,$seek);
+	  return mysqli_data_seek($this->results,$seek);
 	}
 
 	public function fetch(){
-	  if($tmp=mysql_fetch_assoc($this->results)){
+	  if($tmp=mysqli_fetch_assoc($this->results)){
 	    $this->datas[]=$tmp;
 	    return count($this->datas)-1;
 	  }
@@ -115,7 +115,7 @@ class mysql {
 
 	private $insertdata=false;
 	private $insertstart=false;
-	public $maxdata=50000;
+	public $maxdata=100000;
 
 	public function insert($first=false,$second=false,$large=false){
 	  /*
@@ -178,6 +178,6 @@ class mysql {
 	}
 
 	public function close(){
-	  return mysql_close($this->db);
+	  return mysqli_close($this->db);
 	}
 }
