@@ -18,7 +18,7 @@
 
   $db=new database();
   echo "<pre>";
-  echo "<a href='javascript:history.go(-1)'>Return to back</a> | <a href='index.php'>Go to home</a><br><br>";
+  echo "<a href='javascript:history.go(-1)'>Back</a> | <a href='index.php'>Slakfinder Home</a><br><br>";
   $pkg=null;
   foreach($_GET as $key => $value)$$key=$value;
 

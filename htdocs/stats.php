@@ -102,7 +102,7 @@ ImageString($im,2,$i*$large+2,1,date("M",($key)*DAY),$red);
 #
 
 echo "<pre>\n";
- echo "<a href='javascript:history.go(-1)'>Return to back</a> | <a href='index.php'>Go to home</a><br>\n";
+ echo "<a href='javascript:history.go(-1)'>Back</a> | <a href='index.php'>Slakfinder Home</a><br>\n";
  echo "<table border=1 cellspacing=0>\n";
 	echo "  <tr>\n";
 echo "    <td colspan=2>\n";

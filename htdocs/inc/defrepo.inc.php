@@ -26,6 +26,8 @@ function redefrepo($reposelected = 0) {
   $nrepos = $repo->find();
   $stats = new stats();
   $names = $stats->lastsearch(15);
+
+  echo "<a href='javascript:history.go(-1)'> Back</a> | <a href='index.php'>Slakfinder Home</a><br><br>";
   echo "<table border='0' width='100%'>" . 
        "<tr>" . 
        "<td>" . 

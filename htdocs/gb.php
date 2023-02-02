@@ -1,7 +1,7 @@
 <?php session_start(); 
 /*
 <!--<html><body><h1>Guestbook disabled!!</h1>
-<pre><a href='javascript:history.go(-1)'>Return to back</a> | <a href='index.php'>Go to home</a><br></pre>
+<pre><a href='javascript:history.go(-1)'>Back</a> | <a href='index.php'>Slakfinder Home</a><br></pre>
 
 </body></html>
 
@@ -28,7 +28,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
   -->
   </style>
 <body>
-<pre><a href='javascript:history.go(-1)'>Return to back</a> | <a href='index.php'>Go to home</a><br></pre>
+<pre><a href='javascript:history.go(-1)'>Back</a> | <a href='index.php'>Slakfinder Home</a><br></pre>
 
 <h2>Guest Book</h2>
 <pre><font color=green>
