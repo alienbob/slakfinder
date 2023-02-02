@@ -1,9 +1,10 @@
 <?php
-# configurazione
+# configuration
+include_once 'inc/config_defs.inc.php';
 include_once 'config.inc.php';
 include_once 'inc/defrepo.inc.php';
 include_once 'inc/repolist.inc.php';
-# librerie
+# libraries
 include_once 'libs/utils.inc.php';
 include_once 'libs/database.inc.php';
 include_once 'libs/mysql.inc.php';

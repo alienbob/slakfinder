@@ -1,10 +1,12 @@
 <?php
 
+/* Use this file to override default settings */
+/* See inc/config_defs.inc.php for details */
+
+/* You MUST modify at least these parameters */
+
 $dbhost = '127.0.0.1';
-//$dbhost = ':/var/run/mysql/mysql.sock';
 $dbuser = 'slakuser';
 $dbpass = 'slakpass';
 $dbdata = 'slakdb';
 $dbpref = 'spf_';
-$repodir = '/var/www/data';
-$enablefilelist = true;
