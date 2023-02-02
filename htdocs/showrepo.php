@@ -66,5 +66,9 @@
       echo tables();
   }
   echo "</pre>";
-  echo "To report a bug, send a mail to <a href='mailto:zerouno@slacky.it'>zerouno@slacky.it</a>. Thanks.";
+
+  echo "<hr>";
+  echo "<p>The <a href='http://slakfinder.org/'>slakfinder</a> is created by <a href='mailto:zerouno@slacky.it'>zerouno@slacky.it</a>.<br>";
+  echo "To report a bug on this modified instance at <i>slackware.nl/slakfinder</i>, mail to <a href='mailto:alien@slackware.com'>alien@slackware.com</a>. Thanks.</p>";
+
   echo "</body></html>";
