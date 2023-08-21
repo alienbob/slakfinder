@@ -41,7 +41,7 @@ if (!isset($_SESSION['searcher_visitor'])) {
 #echo "You are visitor number {$_SESSION['searcher_visitor']}<br />";
 $newsearch = $name = $desc = $file = $repo = $order = null;
 
-foreach($_GET as $key => $value) $$key = $value;
+foreach($_GET as $key => $value) $$key = htmlspecialchars(strip_tags($value));
 
 if ($name or $desc or $file) {
   if (($start == 0) and ($_SESSION['last_search'] != "name={$name}&desc={$desc}&file={$file}")) {
@@ -304,12 +304,14 @@ if (!($name or $desc or $file)) {
  }
  echo tables();
  echo "<a href='gb.php'>show all</a>";  
+ /*
  echo "<nobr><form action='gb.php' method='post'><br>Nick: ";
  echo "<input name=nick size=10 maxlenght=15 "; 
  if(isset($_SESSION['slakhomelinuxguestbooknick']))echo "value='{$_SESSION['slakhomelinuxguestbooknick']}'";
  echo "> -message: <br>";
  echo "<textarea name=message cols=30 rows=3></textarea><br>";
  echo "<input type=submit value='go'><br></form></nobr>"; 
+  */
  echo "<br>";
  echo "</td>";
  echo "<td width='50%' valign=top style='border-left:1px dotted #000000'>";

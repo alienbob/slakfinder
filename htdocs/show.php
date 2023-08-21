@@ -20,7 +20,7 @@
   echo "<pre>";
   echo "<a href='javascript:history.go(-1)'>Back</a> | <a href='index.php'>Slakfinder Home</a><br><br>";
   $pkg=null;
-  foreach($_GET as $key => $value)$$key=$value;
+  foreach($_GET as $key => $value) $$key=htmlspecialchars(strip_tags($value));
 
   if(!$pkg){
     echo "<b>No package selected</b>\n";

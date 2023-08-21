@@ -18,7 +18,7 @@
   $db=new database();
   echo "<pre>";
   $repo=0;
-  foreach($_GET as $key => $value)$$key=$value;
+  foreach($_GET as $key => $value) $$key=htmlspecialchars(strip_tags($value));
   $id=$repo;
   unset($repo);
 

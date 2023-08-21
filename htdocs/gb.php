@@ -38,7 +38,7 @@ Just for feedback, suggestions, bug reports, repository recommendations, greetin
 </font>
 <form action="gb.php" method="post">Nick:
 <?php
-  if(isset($_POST['nick']))$_SESSION['slakhomelinuxguestbooknick']=$_POST['nick'];
+  if(isset($_POST['nick']))$_SESSION['slakhomelinuxguestbooknick']=htmlspecialchars(strip_tags($_POST['nick']));
   echo "<input name=nick maxlength=15 ";
   if(isset($_SESSION['slakhomelinuxguestbooknick']))echo "value='{$_SESSION['slakhomelinuxguestbooknick']}'";
   echo ">";
@@ -48,15 +48,15 @@ Just for feedback, suggestions, bug reports, repository recommendations, greetin
 <a href='gb.php'>Reload</a> <?php
   if(isset($_POST['message'])){
     if(isset($_SESSION['slakhomelinuxguestbookmsg'])){
-      if($_SESSION['slakhomelinuxguestbookmsg']==$_POST['message']){
+      if($_SESSION['slakhomelinuxguestbookmsg']==htmlspecialchars(strip_tags($_POST['message']))){
 	$gb=new guestbook();
       }else{
-	$_SESSION['slakhomelinuxguestbookmsg']=$_POST['message'];
-	$gb=new guestbook($_POST['message'],$_SESSION['slakhomelinuxguestbooknick']);
+	$_SESSION['slakhomelinuxguestbookmsg']=htmlspecialchars(strip_tags($_POST['message']));
+	$gb=new guestbook(htmlspecialchars(strip_tags($_POST['message'])),$_SESSION['slakhomelinuxguestbooknick']);
       }
     }else{
-      $_SESSION['slakhomelinuxguestbookmsg']=$_POST['message'];
-      $gb=new guestbook($_POST['message'],$_SESSION['slakhomelinuxguestbooknick']);
+      $_SESSION['slakhomelinuxguestbookmsg']=htmlspecialchars(strip_tags($_POST['message']));
+      $gb=new guestbook(htmlspecialchars(strip_tags($_POST['message'])),$_SESSION['slakhomelinuxguestbooknick']);
     }
   }else{
     $gb=new guestbook();

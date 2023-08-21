@@ -34,7 +34,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
   }
   #echo "You are visitor number ".$_SESSION['searcher_visitor']."<br />";
   $name=$desc=$file=$repo=$order=null;
-  foreach($_GET as $key => $value)$$key=$value;
+  foreach($_GET as $key => $value) $$key=htmlspecialchars(strip_tags($value));
   if ($name or $desc or $file) {
     if(($start==0)and($_SESSION['last_search']!="name=$name&desc=$desc&file=$file")){
       $_SESSION['last_search']="name=$name&desc=$desc&file=$file";
