@@ -30,10 +30,10 @@
       echo "Repository Info:";
       echo tables(array(),1,"class='tab'");
       echo tables(array("ID",$repo->id));
-      echo tables(array("URL","<a href='{$repo->url}'>{$repo->url}</a>"));
+      echo tables(array("URL","<a href='{$repo->url}' target='_blank'>{$repo->url}</a>"));
       echo tables(array("Rank",$repo->rank));
-      echo tables(array("File list",(($repo->manifest)?"<a href='{$repo->url}{$repo->manifest}'>{$repo->manifest}</a>":"unsupported")));
-      echo tables(array("Packages","<a href='{$repo->url}{$repo->packages}'>{$repo->packages}</a>"));
+      echo tables(array("File list",(($repo->manifest)?"<a href='{$repo->url}{$repo->manifest}' target='_blank'>{$repo->manifest}</a>":"unsupported")));
+      echo tables(array("Packages","<a href='{$repo->url}{$repo->packages}' target='_blank'>{$repo->packages}</a>"));
       echo tables(array("Slackware Version",$repo->version));
       echo tables(array("Arch",$repo->arch));
       echo tables(array("Class",$repo->class));
@@ -57,7 +57,7 @@
       while($r=$repo->fetch()){
 	echo tables(array(
 	  $repo->id,
-	  "<a href='showrepo.php?repo={$repo->id}'>{$repo->brief}</a>",
+	  "<a href='showrepo.php?repo={$repo->id}' target='_blank'>{$repo->brief}</a>",
 	  $repo->arch,
 	  $repo->version,
 	  $repo->description."<br>"
