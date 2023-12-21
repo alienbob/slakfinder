@@ -146,12 +146,16 @@ class internet {
       $dst=fopen($dest,'w');
       $size=0;
       echo "(download $url";
-      while(!feof($src)){
-	$size+=fwrite($dst,gzread($src,4096));
-	if(isset($_SERVER["_"])){ echo "\r(download $url -> $size\r"; }else{ echo "."; }
+      if(gettype($src) == "resource") {
+        while(!feof($src)){
+	  $size+=fwrite($dst,gzread($src,4096));
+	  if(isset($_SERVER["_"])){ echo "\r(download $url -> $size\r"; }else{ echo "."; }
+        }
+        echo "$dest($size bytes).\n";
+        if(isset($_SERVER["_"])){ echo "\r(download $url -> $dest($size bytes).\n"; }else{ echo "$dest($size bytes).\n"; }
+      } else {
+        echo " is unreachable!\n";
       }
-      echo "$dest($size bytes).\n";
-      if(isset($_SERVER["_"])){ echo "\r(download $url -> $dest($size bytes).\n"; }else{ echo "$dest($size bytes).\n"; }
       fclose($src);
       fclose($dst);
     }
