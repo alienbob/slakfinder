@@ -75,4 +75,5 @@
 74;74;'ok';'SLACKPKGPLUS';'mixed';'noarch';1;1;0;'slackpkgplus-mixed';'https://slackware.nl/slackpkgplus/';'MANIFEST.bz2';0;99;'naall';'PACKAGES.TXT.gz';'Slackpkg+';'Repository for slackpkg+ (https://github.com/zuno/slackpkgplus)'
 75;75;'ok';'SLACKPKGPLUS';'mixed';'noarch';1;1;0;'slackpkgplus15-mixed';'https://slackware.nl/slackpkgplus15/';'MANIFEST.bz2';0;99;'naall';'PACKAGES.TXT.gz';'Slackpkg+15';'Repository for slackpkg+15 (https://github.com/zuno/slackpkgplus)'
 76;76;'ok';'SLACKPKGPLUS';'mixed';'noarch';1;1;0;'slackpkgplusdev-mixed';'https://slackware.nl/slackpkgplusdev/';'MANIFEST.bz2';0;99;'naall';'PACKAGES.TXT.gz';'Slackpkg+dev';'Repository for slackpkg+dev (https://github.com/zuno/slackpkgplus)'
+77;77;'ok';'SLACKDCE';'15.0';'x86_64';1;1;0;'slackdce64150';'https://slackware.uk/slackdce/15.0/x86_64/';'MANIFEST.bz2';1;80;'64150';'PACKAGES.TXT.gz';'SlackDCE Project';'Repository 64bit by Slackware DCE (http://slackdce.radioclub.ar/) packages are compiled from the full collection of unmodified SlackBuilds.org scripts'
 

@@ -1,3 +1,9 @@
+<b>21/dec/2023</b><br>
+I added the SlackDCE repository (http://slackdce.radioclub.ar/) which aims to provide a pre-built package for every entry in SlackBuilds.org - targeting 64bit Slackware 15.0. Read their manifesto at <a href="http://slackdce.radioclub.ar/slackdce/README.txt" target="_blank">http://slackdce.radioclub.ar/slackdce/README.txt</a><br/>
+<br>
+<b>05/mar/2023</b><br>
+I disabled the Guest Book, sorry. Spammers kept polluting it and I got fed up with manual database edits. If you want to share your feedback, please post on <a href="https://alien.slackbook.org/blog/mirror-for-slackpkg-and-slakfinder/">Alien Pastures Blog</a>.<br/>
+<br>
 <b>27/jan/2023</b><br>
 I removed the SlackAr repository after the Slackware Argentina community deleted that repository (previously at http://slack.ar/slackware/15.0/x86_64/) following a difference of opinion with the repo maintainer.<br/>
 <br>
