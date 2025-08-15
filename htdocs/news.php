@@ -1,3 +1,6 @@
+<b>13/may/2024</b><br>
+I removed the SlackDCE repository (http://slackdce.radioclub.ar/) since it seems to have vanished online.</a><br/>
+<br>
 <b>21/dec/2023</b><br>
 I added the SlackDCE repository (http://slackdce.radioclub.ar/) which aims to provide a pre-built package for every entry in SlackBuilds.org - targeting 64bit Slackware 15.0. Read their manifesto at <a href="http://slackdce.radioclub.ar/slackdce/README.txt" target="_blank">http://slackdce.radioclub.ar/slackdce/README.txt</a><br/>
 <br>
