@@ -16,6 +16,7 @@ class mysql {
 		$this->connected=true;
 		if(!mysqli_select_db($this->db, $dbdata))return;
 		$this->started=true;
+		mysqli_set_charset($this->db, 'utf8mb4');
 	}
 
 	public $lastquery, $results, $errno, $error, $datas, $nrows;

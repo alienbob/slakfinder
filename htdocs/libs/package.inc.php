@@ -67,7 +67,7 @@ class package {
 	  $pack['description']="";
 	  break;
 	case $name:
-	  $pack['description'].="$data\n";
+	  $pack['description'].=utf8_encode("$data")."\n";
 	  break;
       }
     }
