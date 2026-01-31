@@ -1,3 +1,6 @@
+<b>30/jan/2026</b><br>
+The KTown repository containing KDE Plasma6 packages for Slackware-current has been added.<br/>
+<br>
 <b>15/aug/2025</b><br>
 The SlackDCE repository has been re-added. It is now hosted on https://slackware.uk/slackdce/ and I hope its maintainer takes it more seriously now.<br/>
 Several other repositories have disappeared from the Internet in the last year. When I migrated the slakfinder to a new server yesterday I found about about that and disabled those in the database.<br/>
