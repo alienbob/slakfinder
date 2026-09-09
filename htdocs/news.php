@@ -1,3 +1,6 @@
+<b>09/sep/2026</b><br>
+The SlackDCE repository has been permanently removed. Its maintainer has proven to be unreliable (the task was too big) and there were no updates since December 2025.<br/>
+<br>
 <b>30/jan/2026</b><br>
 The KTown repository containing KDE Plasma6 packages for Slackware-current has been added.<br/>
 <br>
